@@ -22,6 +22,8 @@
 		84653BCA2181D2AA004EA882 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BC92181D2AA004EA882 /* Game.swift */; };
 		84653BCC2181D2D9004EA882 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BCB2181D2D9004EA882 /* Team.swift */; };
 		84653BCE2181D2F2004EA882 /* player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BCD2181D2F2004EA882 /* player.swift */; };
+		84653BD12181E42B004EA882 /* TeamForimingCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BD02181E42B004EA882 /* TeamForimingCellViewController.swift */; };
+		84653BD32181E450004EA882 /* TeamForimingCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BD22181E450004EA882 /* TeamForimingCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		84653BC92181D2AA004EA882 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		84653BCB2181D2D9004EA882 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		84653BCD2181D2F2004EA882 /* player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = player.swift; sourceTree = "<group>"; };
+		84653BD02181E42B004EA882 /* TeamForimingCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamForimingCellViewController.swift; sourceTree = "<group>"; };
+		84653BD22181E450004EA882 /* TeamForimingCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamForimingCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 		84653BBF2181C62D004EA882 /* TeamForming */ = {
 			isa = PBXGroup;
 			children = (
+				84653BCF2181E3ED004EA882 /* TeamForimingCell */,
 				84653BC02181C6A0004EA882 /* TeamFormingViewController.swift */,
 				84653BC22181C6B6004EA882 /* TeamFormingViewModel.swift */,
 				84653BC42181C81C004EA882 /* TeamFormingViewRouter.swift */,
@@ -116,6 +121,15 @@
 				84653BCD2181D2F2004EA882 /* player.swift */,
 			);
 			path = Modeles;
+			sourceTree = "<group>";
+		};
+		84653BCF2181E3ED004EA882 /* TeamForimingCell */ = {
+			isa = PBXGroup;
+			children = (
+				84653BD02181E42B004EA882 /* TeamForimingCellViewController.swift */,
+				84653BD22181E450004EA882 /* TeamForimingCellViewModel.swift */,
+			);
+			path = TeamForimingCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,7 +208,9 @@
 				84653BCA2181D2AA004EA882 /* Game.swift in Sources */,
 				84653BC32181C6B6004EA882 /* TeamFormingViewModel.swift in Sources */,
 				84653BC72181C832004EA882 /* TeamFormingViewControllerAssembly.swift in Sources */,
+				84653BD12181E42B004EA882 /* TeamForimingCellViewController.swift in Sources */,
 				84653BCE2181D2F2004EA882 /* player.swift in Sources */,
+				84653BD32181E450004EA882 /* TeamForimingCellViewModel.swift in Sources */,
 				840DE0B221808A9200D1A308 /* MainViewRouter.swift in Sources */,
 				84653BCC2181D2D9004EA882 /* Team.swift in Sources */,
 				84653BC52181C81C004EA882 /* TeamFormingViewRouter.swift in Sources */,

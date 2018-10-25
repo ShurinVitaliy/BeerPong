@@ -25,6 +25,7 @@ class TeamFormingViewController: UIViewController {
         super.viewDidLoad()
         tableView = createTableView()
         view.addSubview(tableView)
+        setupNavigationBar()
         
     }
     
@@ -41,7 +42,10 @@ class TeamFormingViewController: UIViewController {
     }
     
     @objc private func addTeam(_ sender: UIBarButtonItem) {
-        
+        viewModel?.addNewItem({ [weak self] in
+            self?.tableView.reloadData()
+            print("i here")
+        })
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -51,12 +55,14 @@ class TeamFormingViewController: UIViewController {
 
 extension TeamFormingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return viewModel?.game.countOfTeams() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        //logic
+        let model = TeamForimingCellViewController(viewModel: TeamForimingCellViewModelImp(team: (viewModel?.game.teamForIndex(indexPath.row))!))
+        model.translatesAutoresizingMaskIntoConstraints = false
+        cell.addSubview(model)
         
         return cell
     }
@@ -64,6 +70,6 @@ extension TeamFormingViewController: UITableViewDataSource {
 
 extension TeamFormingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //logic
+        
     }
 }
