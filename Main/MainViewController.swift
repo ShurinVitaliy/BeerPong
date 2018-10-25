@@ -69,7 +69,7 @@ class MainViewController: UIViewController {
     }
     
     @objc private func teamForming(_ sender: UIButton) {
-        print("team forming")
+        viewModel?.teamForming()
     }
     
     private func setupConstraints() {

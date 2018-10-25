@@ -9,12 +9,17 @@
 import UIKit
 
 protocol MainViewModel {
-    
+    func teamForming()
 }
 
 class MainViewModelImp: MainViewModel {
+
     private let router: MainViewRouter
     init(router: MainViewRouter) {
         self.router = router
+    }
+    
+    func teamForming() {
+        router.openTeamForming()
     }
 }
