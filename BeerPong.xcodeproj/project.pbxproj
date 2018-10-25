@@ -14,6 +14,7 @@
 		840DE0B021808A7900D1A308 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DE0AF21808A7900D1A308 /* MainViewModel.swift */; };
 		840DE0B221808A9200D1A308 /* MainViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DE0B121808A9200D1A308 /* MainViewRouter.swift */; };
 		840DE0B421808A9200D1A308 /* MainViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DE0B321808A9200D1A308 /* MainViewControllerAssembly.swift */; };
+		840DE0B62180F93300D1A308 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840DE0B52180F93200D1A308 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		840DE0AF21808A7900D1A308 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		840DE0B121808A9200D1A308 /* MainViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewRouter.swift; sourceTree = "<group>"; };
 		840DE0B321808A9200D1A308 /* MainViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerAssembly.swift; sourceTree = "<group>"; };
+		840DE0B52180F93200D1A308 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		840DE099218053D700D1A308 /* BeerPong */ = {
 			isa = PBXGroup;
 			children = (
+				840DE0B52180F93200D1A308 /* Main.storyboard */,
 				840DE09A218053D800D1A308 /* AppDelegate.swift */,
 				840DE0A1218053D900D1A308 /* Assets.xcassets */,
 				840DE0A3218053D900D1A308 /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840DE0B62180F93300D1A308 /* Main.storyboard in Resources */,
 				840DE0A5218053D900D1A308 /* LaunchScreen.storyboard in Resources */,
 				840DE0A2218053D900D1A308 /* Assets.xcassets in Resources */,
 			);
