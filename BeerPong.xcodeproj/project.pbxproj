@@ -15,6 +15,10 @@
 		840DE0B221808A9200D1A308 /* MainViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DE0B121808A9200D1A308 /* MainViewRouter.swift */; };
 		840DE0B421808A9200D1A308 /* MainViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DE0B321808A9200D1A308 /* MainViewControllerAssembly.swift */; };
 		840DE0B62180F93300D1A308 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840DE0B52180F93200D1A308 /* Main.storyboard */; };
+		84653BC12181C6A0004EA882 /* TeamFormingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BC02181C6A0004EA882 /* TeamFormingViewController.swift */; };
+		84653BC32181C6B6004EA882 /* TeamFormingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BC22181C6B6004EA882 /* TeamFormingViewModel.swift */; };
+		84653BC52181C81C004EA882 /* TeamFormingViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BC42181C81C004EA882 /* TeamFormingViewRouter.swift */; };
+		84653BC72181C832004EA882 /* TeamFormingViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BC62181C832004EA882 /* TeamFormingViewControllerAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		840DE0B121808A9200D1A308 /* MainViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewRouter.swift; sourceTree = "<group>"; };
 		840DE0B321808A9200D1A308 /* MainViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerAssembly.swift; sourceTree = "<group>"; };
 		840DE0B52180F93200D1A308 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		84653BC02181C6A0004EA882 /* TeamFormingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamFormingViewController.swift; sourceTree = "<group>"; };
+		84653BC22181C6B6004EA882 /* TeamFormingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamFormingViewModel.swift; sourceTree = "<group>"; };
+		84653BC42181C81C004EA882 /* TeamFormingViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamFormingViewRouter.swift; sourceTree = "<group>"; };
+		84653BC62181C832004EA882 /* TeamFormingViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamFormingViewControllerAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +52,7 @@
 		840DE08E218053D600D1A308 = {
 			isa = PBXGroup;
 			children = (
+				84653BBF2181C62D004EA882 /* TeamForming */,
 				840DE0AC218089F300D1A308 /* Main */,
 				840DE099218053D700D1A308 /* BeerPong */,
 				840DE098218053D700D1A308 /* Products */,
@@ -79,6 +88,17 @@
 				840DE0B321808A9200D1A308 /* MainViewControllerAssembly.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		84653BBF2181C62D004EA882 /* TeamForming */ = {
+			isa = PBXGroup;
+			children = (
+				84653BC02181C6A0004EA882 /* TeamFormingViewController.swift */,
+				84653BC22181C6B6004EA882 /* TeamFormingViewModel.swift */,
+				84653BC42181C81C004EA882 /* TeamFormingViewRouter.swift */,
+				84653BC62181C832004EA882 /* TeamFormingViewControllerAssembly.swift */,
+			);
+			path = TeamForming;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,7 +173,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84653BC12181C6A0004EA882 /* TeamFormingViewController.swift in Sources */,
+				84653BC32181C6B6004EA882 /* TeamFormingViewModel.swift in Sources */,
+				84653BC72181C832004EA882 /* TeamFormingViewControllerAssembly.swift in Sources */,
 				840DE0B221808A9200D1A308 /* MainViewRouter.swift in Sources */,
+				84653BC52181C81C004EA882 /* TeamFormingViewRouter.swift in Sources */,
 				840DE09B218053D800D1A308 /* AppDelegate.swift in Sources */,
 				840DE0B421808A9200D1A308 /* MainViewControllerAssembly.swift in Sources */,
 				840DE0AE21808A3900D1A308 /* MainViewController.swift in Sources */,
