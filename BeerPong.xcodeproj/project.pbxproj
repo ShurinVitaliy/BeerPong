@@ -19,6 +19,9 @@
 		84653BC32181C6B6004EA882 /* TeamFormingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BC22181C6B6004EA882 /* TeamFormingViewModel.swift */; };
 		84653BC52181C81C004EA882 /* TeamFormingViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BC42181C81C004EA882 /* TeamFormingViewRouter.swift */; };
 		84653BC72181C832004EA882 /* TeamFormingViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BC62181C832004EA882 /* TeamFormingViewControllerAssembly.swift */; };
+		84653BCA2181D2AA004EA882 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BC92181D2AA004EA882 /* Game.swift */; };
+		84653BCC2181D2D9004EA882 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BCB2181D2D9004EA882 /* Team.swift */; };
+		84653BCE2181D2F2004EA882 /* player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BCD2181D2F2004EA882 /* player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		84653BC22181C6B6004EA882 /* TeamFormingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamFormingViewModel.swift; sourceTree = "<group>"; };
 		84653BC42181C81C004EA882 /* TeamFormingViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamFormingViewRouter.swift; sourceTree = "<group>"; };
 		84653BC62181C832004EA882 /* TeamFormingViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamFormingViewControllerAssembly.swift; sourceTree = "<group>"; };
+		84653BC92181D2AA004EA882 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		84653BCB2181D2D9004EA882 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		84653BCD2181D2F2004EA882 /* player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +58,7 @@
 		840DE08E218053D600D1A308 = {
 			isa = PBXGroup;
 			children = (
+				84653BC82181D283004EA882 /* Modeles */,
 				84653BBF2181C62D004EA882 /* TeamForming */,
 				840DE0AC218089F300D1A308 /* Main */,
 				840DE099218053D700D1A308 /* BeerPong */,
@@ -99,6 +106,16 @@
 				84653BC62181C832004EA882 /* TeamFormingViewControllerAssembly.swift */,
 			);
 			path = TeamForming;
+			sourceTree = "<group>";
+		};
+		84653BC82181D283004EA882 /* Modeles */ = {
+			isa = PBXGroup;
+			children = (
+				84653BC92181D2AA004EA882 /* Game.swift */,
+				84653BCB2181D2D9004EA882 /* Team.swift */,
+				84653BCD2181D2F2004EA882 /* player.swift */,
+			);
+			path = Modeles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,9 +191,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				84653BC12181C6A0004EA882 /* TeamFormingViewController.swift in Sources */,
+				84653BCA2181D2AA004EA882 /* Game.swift in Sources */,
 				84653BC32181C6B6004EA882 /* TeamFormingViewModel.swift in Sources */,
 				84653BC72181C832004EA882 /* TeamFormingViewControllerAssembly.swift in Sources */,
+				84653BCE2181D2F2004EA882 /* player.swift in Sources */,
 				840DE0B221808A9200D1A308 /* MainViewRouter.swift in Sources */,
+				84653BCC2181D2D9004EA882 /* Team.swift in Sources */,
 				84653BC52181C81C004EA882 /* TeamFormingViewRouter.swift in Sources */,
 				840DE09B218053D800D1A308 /* AppDelegate.swift in Sources */,
 				840DE0B421808A9200D1A308 /* MainViewControllerAssembly.swift in Sources */,
