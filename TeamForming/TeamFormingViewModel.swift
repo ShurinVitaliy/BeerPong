@@ -11,6 +11,7 @@ import UIKit
 protocol TeamFormingViewModel {
     func addNewItem(_ reloadData: @escaping () -> Void)
     func createTeam(name: String, captain: String) -> Void
+    func didSelectRowAt(index: Int)
     var game: Game { get }
 }
 
@@ -39,6 +40,9 @@ class TeamFormingViewModelImp: TeamFormingViewModel {
             print("lol")
             return }
         reloadData()
+    }
+    func didSelectRowAt(index: Int) {
+        router.formingPlayersOfTeam(team: game.teamForIndex(index))
     }
     
 }

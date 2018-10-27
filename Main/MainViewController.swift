@@ -65,15 +65,7 @@ class MainViewController: UIViewController {
     }
     
     @objc private func startGame(_ sender: UIButton) {
-        let viewT = TeamForimingCellViewController(viewModel: TeamForimingCellViewModelImp(team: Team(name: "sfd", captain: "sdf", players: nil, victories: 0)))
-        viewT.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(viewT)
-        print("wtf")
-        viewT.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        viewT.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        viewT.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
-        viewT.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        print("xd")
+        
     }
     
     @objc private func teamForming(_ sender: UIButton) {

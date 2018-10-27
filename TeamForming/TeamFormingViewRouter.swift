@@ -15,6 +15,12 @@ class TeamFormingViewRouter {
         self.navigationController = navigationController
     }
     
+    func formingPlayersOfTeam(team: Team) {
+        let assembly = FormingPlayersInTeamViewControllerAssembly()
+        let controller = assembly.createController(navigationController: navigationController, team: team)
+        navigationController.pushViewController(controller, animated: true)
+    }
+    
     func addNewItem(title: String, placeholderCaptain: String, placeholderName: String, createTeam: @escaping (String, String) -> Void) {
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
         alert.addTextField(configurationHandler: { (name) in

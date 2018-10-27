@@ -70,6 +70,6 @@ extension TeamFormingViewController: UITableViewDataSource {
 
 extension TeamFormingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        viewModel?.didSelectRowAt(index: indexPath.row)
     }
 }

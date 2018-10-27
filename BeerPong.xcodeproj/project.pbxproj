@@ -15,6 +15,10 @@
 		840DE0B221808A9200D1A308 /* MainViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DE0B121808A9200D1A308 /* MainViewRouter.swift */; };
 		840DE0B421808A9200D1A308 /* MainViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DE0B321808A9200D1A308 /* MainViewControllerAssembly.swift */; };
 		840DE0B62180F93300D1A308 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840DE0B52180F93200D1A308 /* Main.storyboard */; };
+		845E5CEF218467910078CE33 /* FormingPlayersInTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845E5CEE218467910078CE33 /* FormingPlayersInTeamViewController.swift */; };
+		845E5CF1218467A60078CE33 /* FormingPlayersInTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845E5CF0218467A60078CE33 /* FormingPlayersInTeamViewModel.swift */; };
+		845E5CF3218467BB0078CE33 /* FormingPlayersInTeamViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845E5CF2218467BB0078CE33 /* FormingPlayersInTeamViewRouter.swift */; };
+		845E5CF5218467DF0078CE33 /* FormingPlayersInTeamViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845E5CF4218467DF0078CE33 /* FormingPlayersInTeamViewControllerAssembly.swift */; };
 		84653BC12181C6A0004EA882 /* TeamFormingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BC02181C6A0004EA882 /* TeamFormingViewController.swift */; };
 		84653BC32181C6B6004EA882 /* TeamFormingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BC22181C6B6004EA882 /* TeamFormingViewModel.swift */; };
 		84653BC52181C81C004EA882 /* TeamFormingViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BC42181C81C004EA882 /* TeamFormingViewRouter.swift */; };
@@ -37,6 +41,10 @@
 		840DE0B121808A9200D1A308 /* MainViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewRouter.swift; sourceTree = "<group>"; };
 		840DE0B321808A9200D1A308 /* MainViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerAssembly.swift; sourceTree = "<group>"; };
 		840DE0B52180F93200D1A308 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		845E5CEE218467910078CE33 /* FormingPlayersInTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormingPlayersInTeamViewController.swift; sourceTree = "<group>"; };
+		845E5CF0218467A60078CE33 /* FormingPlayersInTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormingPlayersInTeamViewModel.swift; sourceTree = "<group>"; };
+		845E5CF2218467BB0078CE33 /* FormingPlayersInTeamViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormingPlayersInTeamViewRouter.swift; sourceTree = "<group>"; };
+		845E5CF4218467DF0078CE33 /* FormingPlayersInTeamViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormingPlayersInTeamViewControllerAssembly.swift; sourceTree = "<group>"; };
 		84653BC02181C6A0004EA882 /* TeamFormingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamFormingViewController.swift; sourceTree = "<group>"; };
 		84653BC22181C6B6004EA882 /* TeamFormingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamFormingViewModel.swift; sourceTree = "<group>"; };
 		84653BC42181C81C004EA882 /* TeamFormingViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamFormingViewRouter.swift; sourceTree = "<group>"; };
@@ -63,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				84653BC82181D283004EA882 /* Modeles */,
+				845E5CED218467370078CE33 /* FormingPlayersInTeam */,
 				84653BBF2181C62D004EA882 /* TeamForming */,
 				840DE0AC218089F300D1A308 /* Main */,
 				840DE099218053D700D1A308 /* BeerPong */,
@@ -99,6 +108,17 @@
 				840DE0B321808A9200D1A308 /* MainViewControllerAssembly.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		845E5CED218467370078CE33 /* FormingPlayersInTeam */ = {
+			isa = PBXGroup;
+			children = (
+				845E5CEE218467910078CE33 /* FormingPlayersInTeamViewController.swift */,
+				845E5CF0218467A60078CE33 /* FormingPlayersInTeamViewModel.swift */,
+				845E5CF2218467BB0078CE33 /* FormingPlayersInTeamViewRouter.swift */,
+				845E5CF4218467DF0078CE33 /* FormingPlayersInTeamViewControllerAssembly.swift */,
+			);
+			path = FormingPlayersInTeam;
 			sourceTree = "<group>";
 		};
 		84653BBF2181C62D004EA882 /* TeamForming */ = {
@@ -209,10 +229,14 @@
 				84653BC32181C6B6004EA882 /* TeamFormingViewModel.swift in Sources */,
 				84653BC72181C832004EA882 /* TeamFormingViewControllerAssembly.swift in Sources */,
 				84653BD12181E42B004EA882 /* TeamForimingCellViewController.swift in Sources */,
+				845E5CEF218467910078CE33 /* FormingPlayersInTeamViewController.swift in Sources */,
 				84653BCE2181D2F2004EA882 /* player.swift in Sources */,
 				84653BD32181E450004EA882 /* TeamForimingCellViewModel.swift in Sources */,
 				840DE0B221808A9200D1A308 /* MainViewRouter.swift in Sources */,
 				84653BCC2181D2D9004EA882 /* Team.swift in Sources */,
+				845E5CF5218467DF0078CE33 /* FormingPlayersInTeamViewControllerAssembly.swift in Sources */,
+				845E5CF1218467A60078CE33 /* FormingPlayersInTeamViewModel.swift in Sources */,
+				845E5CF3218467BB0078CE33 /* FormingPlayersInTeamViewRouter.swift in Sources */,
 				84653BC52181C81C004EA882 /* TeamFormingViewRouter.swift in Sources */,
 				840DE09B218053D800D1A308 /* AppDelegate.swift in Sources */,
 				840DE0B421808A9200D1A308 /* MainViewControllerAssembly.swift in Sources */,
