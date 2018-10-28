@@ -43,13 +43,13 @@ class TeamForimingCellViewController: UIView {
         addSubview(teamName)
         teamCaptain = setupLabel(labelType: LabelType.captain, text: (viewModel?.team.captain)!)
         addSubview(teamCaptain)
-        players = setupTextView(labelType: LabelType.players, text: setPlayersInTeam(players: viewModel?.team.players))            
+        players = setupTextView(labelType: LabelType.players, text: setPlayersInTeam(players: viewModel?.team.playersIntTeam()))            
         addSubview(players)
         setupConstraints()
     }
     
     private func setPlayersInTeam(players: [Player]?) -> String {
-        var playersInString: String = "sdfdsf"
+        var playersInString: String = ""
         if let playersNN = players {
             for player in playersNN {
                 playersInString.append(player.name)
@@ -95,7 +95,7 @@ class TeamForimingCellViewController: UIView {
         players.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8).isActive = true
         players.topAnchor.constraint(equalTo: teamCaptain.bottomAnchor, constant: 8).isActive = true
         players.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
-        players.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 1/3).isActive = true
+        players.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 1/2).isActive = true
         
     }
     

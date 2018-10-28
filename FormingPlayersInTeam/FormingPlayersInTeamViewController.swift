@@ -34,7 +34,9 @@ class FormingPlayersInTeamViewController: UIViewController {
     }
     
     @objc private func addPeople(_ sender: UIBarButtonItem) {
-        print("addPeople")
+        viewModel?.addNewPlayer({ [weak self] in
+            self?.tableView.reloadData()
+        })
     }
     
     private func createTableView() -> UITableView {
@@ -56,12 +58,12 @@ class FormingPlayersInTeamViewController: UIViewController {
 
 extension FormingPlayersInTeamViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return (viewModel?.team.countOfPlayers())!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        
+        cell.textLabel?.text = viewModel?.team.getNamePlayerForIndex(index: indexPath.row)
         return cell
     }
 }

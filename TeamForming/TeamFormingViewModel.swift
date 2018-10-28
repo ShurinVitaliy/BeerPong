@@ -36,14 +36,14 @@ class TeamFormingViewModelImp: TeamFormingViewModel {
     }
     
     func createTeam(name: String, captain: String) {
-        let team = Team(name: name, captain: captain, players: nil, victories: 0)
+        let team = Team(name: name, captain: captain, victories: 0)
         game.addNewTeam(team: team)
         guard let reloadData = reloadData else {
             return }
         reloadData()
     }
     func didSelectRowAt(index: Int) {
-        router.formingPlayersOfTeam(team: game.teamForIndex(index))
+        router.formingPlayersOfTeam(team: game.teamForIndex(index), reloadData: reloadData!)
     }
     
 }

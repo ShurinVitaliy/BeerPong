@@ -15,9 +15,9 @@ class TeamFormingViewRouter {
         self.navigationController = navigationController
     }
     
-    func formingPlayersOfTeam(team: Team) {
+    func formingPlayersOfTeam(team: Team, reloadData: @escaping () -> Void) {
         let assembly = FormingPlayersInTeamViewControllerAssembly()
-        let controller = assembly.createController(navigationController: navigationController, team: team)
+        let controller = assembly.createController(navigationController: navigationController, team: team, reloadData: reloadData)
         navigationController.pushViewController(controller, animated: true)
     }
     

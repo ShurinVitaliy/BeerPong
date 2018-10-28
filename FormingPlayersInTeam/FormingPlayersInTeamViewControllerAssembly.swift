@@ -9,9 +9,9 @@
 import UIKit
 
 class FormingPlayersInTeamViewControllerAssembly {
-    func createController(navigationController: UINavigationController, team: Team) -> UIViewController {
+    func createController(navigationController: UINavigationController, team: Team, reloadData: @escaping () -> Void) -> UIViewController {
         let router = FormingPlayersInTeamViewRouter(navigationController: navigationController)
-        let model = FormingPlayersInTeamViewModelImp(router: router, team: team)
+        let model = FormingPlayersInTeamViewModelImp(router: router, team: team, reloadData: reloadData)
         let controller = FormingPlayersInTeamViewController(viewModel: model)
         return controller
     }

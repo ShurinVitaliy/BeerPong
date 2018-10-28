@@ -15,6 +15,20 @@ class FormingPlayersInTeamViewRouter {
     }
     
     func addPeople(title: String, placeholder: String, addNewPeople: @escaping (String) -> Void) {
-        
+        let aler = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        aler.addTextField(configurationHandler: { (name) in
+            name.placeholder = placeholder
+        })
+        aler.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        aler.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            if (aler.textFields![0].text?.isEmpty)! {
+                let alertWarning = UIAlertController(title: "Ошибка", message: "вы не ввели имя", preferredStyle: .alert)
+                alertWarning.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.navigationController.present(alertWarning, animated: true, completion: nil)
+            } else {
+                addNewPeople(aler.textFields![0].text!)
+            }
+        }))
+        navigationController.present(aler, animated: true, completion: nil)        
     }
 }
