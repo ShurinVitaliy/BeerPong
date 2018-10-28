@@ -1,5 +1,5 @@
 //
-//  player.swift
+//  Player.swift
 //  BeerPong
 //
 //  Created by Admin on 25.10.2018.

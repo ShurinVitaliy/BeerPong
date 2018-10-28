@@ -15,9 +15,9 @@ class MainViewRouter {
         self.navigationController = navigationController
     }
     
-    func openTeamForming() {
+    func openTeamForming(game: Game) {
         let assembly = TeamFormingViewControllerAssembly()
-        let controller = assembly.createController(navigationController: navigationController)
+        let controller = assembly.createController(navigationController: navigationController, game: game)
         navigationController.pushViewController(controller, animated: true)
     }
 }

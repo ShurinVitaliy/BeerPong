@@ -39,13 +39,29 @@ class TeamForimingCellViewController: UIView {
     }
     
     private func setupView() {
-        teamName = setupLabel(labelType: LabelType.name, text: "sdf")
+        teamName = setupLabel(labelType: LabelType.name, text: (viewModel?.team.name)!)
         addSubview(teamName)
-        teamCaptain = setupLabel(labelType: LabelType.captain, text: "xd")
+        teamCaptain = setupLabel(labelType: LabelType.captain, text: (viewModel?.team.captain)!)
         addSubview(teamCaptain)
-        players = setupTextView(labelType: LabelType.players, text: "1 2 3 4 5")
+        players = setupTextView(labelType: LabelType.players, text: setPlayersInTeam(players: viewModel?.team.players))            
         addSubview(players)
         setupConstraints()
+    }
+    
+    private func setPlayersInTeam(players: [Player]?) -> String {
+        var playersInString: String = "sdfdsf"
+        if let playersNN = players {
+            for player in playersNN {
+                playersInString.append(player.name)
+                playersInString.append("\n")
+            }
+        }
+        else {
+            playersInString = "none"
+        }
+
+        return playersInString
+        
     }
     
     private func setupLabel(labelType: LabelType, text: String) -> UILabel {
@@ -60,6 +76,7 @@ class TeamForimingCellViewController: UIView {
     private func setupTextView(labelType: LabelType, text: String) -> UITextView {
         let textView = UITextView()
         textView.textAlignment = .left
+        textView.font = UIFont.boldSystemFont(ofSize: labelType.size())
         textView.text = text
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
@@ -76,8 +93,9 @@ class TeamForimingCellViewController: UIView {
         
         players.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8).isActive = true
         players.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8).isActive = true
-        players.topAnchor.constraint(equalTo: teamCaptain.bottomAnchor, constant: 32).isActive = true
+        players.topAnchor.constraint(equalTo: teamCaptain.bottomAnchor, constant: 8).isActive = true
         players.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
+        players.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 1/3).isActive = true
         
     }
     

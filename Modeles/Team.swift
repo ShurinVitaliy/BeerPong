@@ -11,7 +11,7 @@ import Foundation
 class Team {
     private(set) var name: String
     private(set) var captain: String
-    private var players: [Player]?
+    private(set) var players: [Player]?
     private var victories: Int = 0
     
     init(name: String, captain: String, players: [Player]?, victories: Int) {

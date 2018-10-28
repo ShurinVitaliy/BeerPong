@@ -13,4 +13,8 @@ class FormingPlayersInTeamViewRouter {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
+    
+    func addPeople(title: String, placeholder: String, addNewPeople: @escaping (String) -> Void) {
+        
+    }
 }

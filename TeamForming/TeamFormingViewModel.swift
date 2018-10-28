@@ -22,10 +22,12 @@ class TeamFormingViewModelImp: TeamFormingViewModel {
     private let alertTitle: String = "создание команды"
     private let placeholderCaptain: String = "капитан команды"
     private let placeholderName: String = "название команды"
-    let game = Game(teams: [Team]())
+    //let game = Game(teams: [Team]())
+    let game: Game
     
-    init(router: TeamFormingViewRouter) {
+    init(router: TeamFormingViewRouter, game: Game) {
         self.router = router
+        self.game = game
     }
     
     func addNewItem(_ reloadData: @escaping () -> Void) {
@@ -37,7 +39,6 @@ class TeamFormingViewModelImp: TeamFormingViewModel {
         let team = Team(name: name, captain: captain, players: nil, victories: 0)
         game.addNewTeam(team: team)
         guard let reloadData = reloadData else {
-            print("lol")
             return }
         reloadData()
     }
