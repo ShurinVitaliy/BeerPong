@@ -42,7 +42,6 @@ class FormingPlayersInTeamViewController: UIViewController {
     private func createTableView() -> UITableView {
         let tableView = UITableView(frame: view.bounds)
         tableView.dataSource = self
-        tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         return tableView
     }
@@ -68,8 +67,3 @@ extension FormingPlayersInTeamViewController: UITableViewDataSource {
     }
 }
 
-extension FormingPlayersInTeamViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-}

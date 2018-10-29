@@ -53,7 +53,10 @@ class TeamFormingViewController: UIViewController {
     }
     
     @objc private func startGame(_ sender: UIButton) {
-        print("начать игру")
+        let countOfTeams = viewModel?.game.countOfTeams() ?? 0
+        if countOfTeams > 1 {
+            viewModel?.startGame()
+        }
     }
     
     private func createViewForTableView() -> UIView {

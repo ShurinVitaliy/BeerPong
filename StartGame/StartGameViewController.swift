@@ -24,12 +24,17 @@ class StartGameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("tut 9")
+        tableView = createTableView()
+        view.addSubview(tableView)
+        print(viewModel?.gameCompetitions.count)
     }
     
     private func createTableView() -> UITableView {
         let tableView = UITableView(frame: view.bounds)
-        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         return tableView
     }
     
@@ -37,4 +42,30 @@ class StartGameViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+extension StartGameViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.gameCompetitions.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        let model = StartGameCellViewController(viewModel: StartGameCellViewModelImp(competitions: (viewModel?.gameCompetitions[indexPath.row])!) )
+        cell.addSubview(model)
+        model.translatesAutoresizingMaskIntoConstraints = false
+        model.trailingAnchor.constraint(equalTo: cell.trailingAnchor).isActive = true
+        model.leadingAnchor.constraint(equalTo: cell.leadingAnchor).isActive = true
+        model.bottomAnchor.constraint(equalTo: cell.bottomAnchor).isActive = true
+        model.topAnchor.constraint(equalTo: cell.topAnchor).isActive = true
+        return cell
+    }
+}
+
+extension StartGameViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 }

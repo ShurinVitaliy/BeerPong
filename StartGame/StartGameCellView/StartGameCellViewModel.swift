@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+protocol StartGameCellViewModel {
+    var competitions: Competiton{ get }
+}
+
+class StartGameCellViewModelImp: StartGameCellViewModel {
+    let competitions: Competiton
+    
+    init(competitions: Competiton) {
+        self.competitions = competitions
+    }
+}

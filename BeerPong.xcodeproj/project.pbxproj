@@ -34,6 +34,7 @@
 		84E9D1672187393600C924B4 /* StartGameViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D1662187393600C924B4 /* StartGameViewControllerAssembly.swift */; };
 		84E9D16A21873D5200C924B4 /* StartGameCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D16921873D5200C924B4 /* StartGameCellViewController.swift */; };
 		84E9D16C21873D6600C924B4 /* StartGameCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D16B21873D6600C924B4 /* StartGameCellViewModel.swift */; };
+		84E9D16E21875AE300C924B4 /* Competition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D16D21875AE300C924B4 /* Competition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		84E9D1662187393600C924B4 /* StartGameViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameViewControllerAssembly.swift; sourceTree = "<group>"; };
 		84E9D16921873D5200C924B4 /* StartGameCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameCellViewController.swift; sourceTree = "<group>"; };
 		84E9D16B21873D6600C924B4 /* StartGameCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameCellViewModel.swift; sourceTree = "<group>"; };
+		84E9D16D21875AE300C924B4 /* Competition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				84653BC92181D2AA004EA882 /* Game.swift */,
 				84653BCB2181D2D9004EA882 /* Team.swift */,
 				84653BCD2181D2F2004EA882 /* Player.swift */,
+				84E9D16D21875AE300C924B4 /* Competition.swift */,
 			);
 			path = Modeles;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				84653BCC2181D2D9004EA882 /* Team.swift in Sources */,
 				845E5CF5218467DF0078CE33 /* FormingPlayersInTeamViewControllerAssembly.swift in Sources */,
 				845E5CF1218467A60078CE33 /* FormingPlayersInTeamViewModel.swift in Sources */,
+				84E9D16E21875AE300C924B4 /* Competition.swift in Sources */,
 				845E5CF3218467BB0078CE33 /* FormingPlayersInTeamViewRouter.swift in Sources */,
 				84653BC52181C81C004EA882 /* TeamFormingViewRouter.swift in Sources */,
 				84E9D1652187392200C924B4 /* StartGameViewRouter.swift in Sources */,

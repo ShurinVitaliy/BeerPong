@@ -53,5 +53,13 @@ class TeamFormingViewRouter {
         navigationController.present(alert, animated: true, completion: nil)
     }
     
+    func startGame(game: Game) {
+        let assembly = StartGameViewControllerAssembly()
+        let controller = assembly.createController(navigationController: navigationController, game: game)
+        navigationController.pushViewController(controller, animated: true)
+        
+    }
+    
+    
 
 }

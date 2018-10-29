@@ -10,9 +10,11 @@ import UIKit
 
 protocol TeamFormingViewModel {
     func addNewItem(_ reloadData: @escaping () -> Void)
-    func createTeam(name: String, captain: String) -> Void
+    func createTeam(name: String, captain: String)
     func didSelectRowAt(index: Int)
+    func startGame()
     var game: Game { get }
+    
 }
 
 class TeamFormingViewModelImp: TeamFormingViewModel {
@@ -43,7 +45,16 @@ class TeamFormingViewModelImp: TeamFormingViewModel {
         reloadData()
     }
     func didSelectRowAt(index: Int) {
-        router.formingPlayersOfTeam(team: game.teamForIndex(index), reloadData: reloadData!)
+        if let reloadData = reloadData {
+            router.formingPlayersOfTeam(team: game.teamForIndex(index), reloadData: reloadData)
+        } else {
+            return
+        }
+        
+    }
+    
+    func startGame() {
+        router.startGame(game: game)
     }
     
 }
