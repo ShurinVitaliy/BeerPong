@@ -28,6 +28,12 @@
 		84653BCE2181D2F2004EA882 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BCD2181D2F2004EA882 /* Player.swift */; };
 		84653BD12181E42B004EA882 /* TeamForimingCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BD02181E42B004EA882 /* TeamForimingCellViewController.swift */; };
 		84653BD32181E450004EA882 /* TeamForimingCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BD22181E450004EA882 /* TeamForimingCellViewModel.swift */; };
+		84E9D161218738EF00C924B4 /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D160218738EF00C924B4 /* StartGameViewController.swift */; };
+		84E9D1632187390500C924B4 /* StartGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D1622187390500C924B4 /* StartGameViewModel.swift */; };
+		84E9D1652187392200C924B4 /* StartGameViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D1642187392200C924B4 /* StartGameViewRouter.swift */; };
+		84E9D1672187393600C924B4 /* StartGameViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D1662187393600C924B4 /* StartGameViewControllerAssembly.swift */; };
+		84E9D16A21873D5200C924B4 /* StartGameCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D16921873D5200C924B4 /* StartGameCellViewController.swift */; };
+		84E9D16C21873D6600C924B4 /* StartGameCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D16B21873D6600C924B4 /* StartGameCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +60,12 @@
 		84653BCD2181D2F2004EA882 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		84653BD02181E42B004EA882 /* TeamForimingCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamForimingCellViewController.swift; sourceTree = "<group>"; };
 		84653BD22181E450004EA882 /* TeamForimingCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamForimingCellViewModel.swift; sourceTree = "<group>"; };
+		84E9D160218738EF00C924B4 /* StartGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
+		84E9D1622187390500C924B4 /* StartGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameViewModel.swift; sourceTree = "<group>"; };
+		84E9D1642187392200C924B4 /* StartGameViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameViewRouter.swift; sourceTree = "<group>"; };
+		84E9D1662187393600C924B4 /* StartGameViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameViewControllerAssembly.swift; sourceTree = "<group>"; };
+		84E9D16921873D5200C924B4 /* StartGameCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameCellViewController.swift; sourceTree = "<group>"; };
+		84E9D16B21873D6600C924B4 /* StartGameCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +84,7 @@
 			children = (
 				84653BC82181D283004EA882 /* Modeles */,
 				845E5CED218467370078CE33 /* FormingPlayersInTeam */,
+				84E9D15F2187388D00C924B4 /* StartGame */,
 				84653BBF2181C62D004EA882 /* TeamForming */,
 				840DE0AC218089F300D1A308 /* Main */,
 				840DE099218053D700D1A308 /* BeerPong */,
@@ -152,6 +165,27 @@
 			path = TeamForimingCell;
 			sourceTree = "<group>";
 		};
+		84E9D15F2187388D00C924B4 /* StartGame */ = {
+			isa = PBXGroup;
+			children = (
+				84E9D16821873CEB00C924B4 /* StartGameCellView */,
+				84E9D160218738EF00C924B4 /* StartGameViewController.swift */,
+				84E9D1622187390500C924B4 /* StartGameViewModel.swift */,
+				84E9D1642187392200C924B4 /* StartGameViewRouter.swift */,
+				84E9D1662187393600C924B4 /* StartGameViewControllerAssembly.swift */,
+			);
+			path = StartGame;
+			sourceTree = "<group>";
+		};
+		84E9D16821873CEB00C924B4 /* StartGameCellView */ = {
+			isa = PBXGroup;
+			children = (
+				84E9D16921873D5200C924B4 /* StartGameCellViewController.swift */,
+				84E9D16B21873D6600C924B4 /* StartGameCellViewModel.swift */,
+			);
+			path = StartGameCellView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -224,13 +258,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84E9D161218738EF00C924B4 /* StartGameViewController.swift in Sources */,
 				84653BC12181C6A0004EA882 /* TeamFormingViewController.swift in Sources */,
 				84653BCA2181D2AA004EA882 /* Game.swift in Sources */,
+				84E9D16C21873D6600C924B4 /* StartGameCellViewModel.swift in Sources */,
+				84E9D1632187390500C924B4 /* StartGameViewModel.swift in Sources */,
 				84653BC32181C6B6004EA882 /* TeamFormingViewModel.swift in Sources */,
 				84653BC72181C832004EA882 /* TeamFormingViewControllerAssembly.swift in Sources */,
 				84653BD12181E42B004EA882 /* TeamForimingCellViewController.swift in Sources */,
 				845E5CEF218467910078CE33 /* FormingPlayersInTeamViewController.swift in Sources */,
 				84653BCE2181D2F2004EA882 /* Player.swift in Sources */,
+				84E9D1672187393600C924B4 /* StartGameViewControllerAssembly.swift in Sources */,
 				84653BD32181E450004EA882 /* TeamForimingCellViewModel.swift in Sources */,
 				840DE0B221808A9200D1A308 /* MainViewRouter.swift in Sources */,
 				84653BCC2181D2D9004EA882 /* Team.swift in Sources */,
@@ -238,9 +276,11 @@
 				845E5CF1218467A60078CE33 /* FormingPlayersInTeamViewModel.swift in Sources */,
 				845E5CF3218467BB0078CE33 /* FormingPlayersInTeamViewRouter.swift in Sources */,
 				84653BC52181C81C004EA882 /* TeamFormingViewRouter.swift in Sources */,
+				84E9D1652187392200C924B4 /* StartGameViewRouter.swift in Sources */,
 				840DE09B218053D800D1A308 /* AppDelegate.swift in Sources */,
 				840DE0B421808A9200D1A308 /* MainViewControllerAssembly.swift in Sources */,
 				840DE0AE21808A3900D1A308 /* MainViewController.swift in Sources */,
+				84E9D16A21873D5200C924B4 /* StartGameCellViewController.swift in Sources */,
 				840DE0B021808A7900D1A308 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

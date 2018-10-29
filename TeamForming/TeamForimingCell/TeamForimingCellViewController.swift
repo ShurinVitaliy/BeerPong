@@ -78,6 +78,9 @@ class TeamForimingCellViewController: UIView {
         textView.textAlignment = .left
         textView.font = UIFont.boldSystemFont(ofSize: labelType.size())
         textView.text = text
+        textView.layer.borderWidth = 0.5
+        textView.layer.cornerRadius = 10
+        textView.isEditable = false
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }

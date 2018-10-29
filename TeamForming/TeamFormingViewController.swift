@@ -11,6 +11,8 @@ import UIKit
 class TeamFormingViewController: UIViewController {
     private var viewModel: TeamFormingViewModel?
     private var tableView: UITableView!
+    private var viewForTableView: UIView!
+    private var startGameButton: UIButton!
     
     convenience init(viewModel: TeamFormingViewModel) {
         self.init(nibName: nil, bundle: nil)
@@ -23,14 +25,68 @@ class TeamFormingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewForTableView = createViewForTableView()
+        view.addSubview(viewForTableView)
+        startGameButton = createStartGameButton()
+        view.addSubview(startGameButton)
+        setUpConstraints()
         tableView = createTableView()
+        viewForTableView.addSubview(tableView)
+        setUpConstraintsForTableView()
+        /*
         view.addSubview(tableView)
+        viewForTableView.addSubview(tableView)
+        setUpConstraintsForTableView()*/
         setupNavigationBar()
-        print(viewModel?.game.countOfTeams())
+    }
+    
+    private func createStartGameButton() -> UIButton {
+        let gameButton = UIButton()
+        gameButton.setTitle("Перейти к игре!", for: .normal)
+        gameButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        gameButton.titleLabel?.textAlignment = .center
+        gameButton.translatesAutoresizingMaskIntoConstraints = false
+        gameButton.addTarget(self, action: #selector(startGame), for: UIControlEvents.touchUpInside)
+        gameButton.backgroundColor = .darkGray
+        return gameButton
+    }
+    
+    @objc private func startGame(_ sender: UIButton) {
+        print("начать игру")
+    }
+    
+    private func createViewForTableView() -> UIView {
+        let viewForTableView = UIView()
+        viewForTableView.backgroundColor = .white
+        viewForTableView.translatesAutoresizingMaskIntoConstraints = false
+        return viewForTableView
+    }
+    
+    private func setUpConstraints() {
+        
+        viewForTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        viewForTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        viewForTableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        viewForTableView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 8/9).isActive = true
+        
+        startGameButton.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        startGameButton.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        startGameButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        startGameButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/9).isActive = true
+        
+    }
+    
+    private func setUpConstraintsForTableView() {
+        tableView.trailingAnchor.constraint(equalTo: viewForTableView.trailingAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: viewForTableView.leadingAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: viewForTableView.topAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: viewForTableView.bottomAnchor).isActive = true
     }
     
     private func createTableView() -> UITableView {
-        let tableView = UITableView(frame: view.bounds)
+        let tableView = UITableView(frame: viewForTableView.bounds)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
