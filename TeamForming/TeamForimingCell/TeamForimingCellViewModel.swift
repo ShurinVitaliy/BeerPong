@@ -17,6 +17,5 @@ class TeamForimingCellViewModelImp: TeamForimingCellViewModel {
     
     init(team: Team) {
         self.team = team
-    }
-    
+    }    
 }

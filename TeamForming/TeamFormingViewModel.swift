@@ -24,7 +24,6 @@ class TeamFormingViewModelImp: TeamFormingViewModel {
     private let alertTitle: String = "создание команды"
     private let placeholderCaptain: String = "капитан команды"
     private let placeholderName: String = "название команды"
-    //let game = Game(teams: [Team]())
     let game: Game
     
     init(router: TeamFormingViewRouter, game: Game) {

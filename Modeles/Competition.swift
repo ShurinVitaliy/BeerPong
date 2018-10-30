@@ -22,12 +22,19 @@ class Competiton {
         viner = team
     }
     
+    func getViner() -> Team {
+        return viner!
+    }
+    
     func nameOfViner() -> String {
         return "победитель: \(viner?.name ?? " ")"
     }
     
-    func vinewIsNil() -> Bool {
-        
-        return false
+    func vinerIsNil() -> Bool {
+        if self.viner != nil {
+            return true
+        } else {
+            return false
+        }
     }
 }

@@ -33,16 +33,17 @@ class StartGameViewController: UIViewController {
         let tableView = UITableView(frame: view.bounds)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+         tableView.register(StartGameCellViewController.self, forCellReuseIdentifier: "StartGameCellViewController")
         return tableView
     }
     
     func setupNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(nextLvL))
+        navigationItem.leftBarButtonItem = UIBarButtonItem()
     }
     
     @objc private func nextLvL(_ sender: UIBarButtonItem) {
-        print("nex")
+        viewModel?.nextGameOrFinal()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -54,18 +55,15 @@ class StartGameViewController: UIViewController {
 extension StartGameViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.competitions.count ?? 0
+        return viewModel?.gameCompetitions.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        let model = StartGameCellViewController(viewModel: StartGameCellViewModelImp(competitions: (viewModel?.competitions[indexPath.row])!) )
-        cell.addSubview(model)
-        model.translatesAutoresizingMaskIntoConstraints = false
-        model.trailingAnchor.constraint(equalTo: cell.trailingAnchor).isActive = true
-        model.leadingAnchor.constraint(equalTo: cell.leadingAnchor).isActive = true
-        model.bottomAnchor.constraint(equalTo: cell.bottomAnchor).isActive = true
-        model.topAnchor.constraint(equalTo: cell.topAnchor).isActive = true
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "StartGameCellViewController", for: indexPath) as? StartGameCellViewController, let model = viewModel?.setForIndex(indexPath.row)
+            else {
+                return UITableViewCell()
+        }
+        cell.apply(viewModel: model)
         return cell
     }
 }

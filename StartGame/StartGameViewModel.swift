@@ -9,32 +9,33 @@
 import Foundation
 
 protocol StartGameViewModel {
-    var competitions: [Competiton] { get }
+    var gameCompetitions: [Competiton] { get }
     func didSelectRowAt(index: Int, _ reloadData: @escaping () -> Void)
     func createWiner(winer: Team, index: Int)
+    func nextGameOrFinal()
+    func setForIndex(_ index: Int) -> StartGameCellViewModelImp
 }
 
 class StartGameViewModelImp: StartGameViewModel {
     
     private let router: StartGameViewRouter
     let game: Game
-    var competitions: [Competiton]
+    var gameCompetitions = [Competiton]()
     private var reloadData: (() -> Void)?
     
-    init(router: StartGameViewRouter, game: Game, competitions: [Competiton]) {
+    init(router: StartGameViewRouter, game: Game) {
         self.router = router
         self.game = game
-        self.competitions = competitions
         createPlace()
     }
     
     func addCompetition(competition: Competiton) {
-        competitions.append(competition)
+        gameCompetitions.append(competition)
     }
     
     func createPlace() {
         var i: Int = 0
-        while self.competitions.count != (self.game.countOfTeams()/2 + self.game.countOfTeams() % 2) {
+        while self.gameCompetitions.count != (self.game.countOfTeams()/2 + self.game.countOfTeams() % 2) {
             addCompetition(competition: Competiton(competiter1: game.teamForIndex(i), competiter2:  game.teamForIndex(i + 1)))
             i = i + 2
         }
@@ -42,15 +43,35 @@ class StartGameViewModelImp: StartGameViewModel {
     
     func didSelectRowAt(index: Int, _ reloadData: @escaping () -> Void) {
         self.reloadData = reloadData
-        router.whyIsWiner(competition1: competitions[index].competiter1, competition2: competitions[index].competiter2, index: index, createWiner: createWiner)
+        router.whyIsWiner(competition1: gameCompetitions[index].competiter1, competition2: gameCompetitions[index].competiter2, index: index, createWiner: createWiner)
     }
     
     func createWiner(winer: Team, index: Int) {
-        competitions[index].setupViner(team: winer)
+        gameCompetitions[index].setupViner(team: winer)
         guard let reloadData = reloadData else {
             return }
         reloadData()
     }
     
+    func nextGameOrFinal() {
+        if gameCompetitions.count > 1 {
+            var index: Int = 0
+            var bufferGameCompetitions = [Competiton]()
+            while bufferGameCompetitions.count != (gameCompetitions.count / 2 + gameCompetitions.count % 2) {
+                bufferGameCompetitions.append(Competiton(competiter1: gameCompetitions[index].getViner(), competiter2:  gameCompetitions[index + 1].getViner()))
+                index = index + 1
+            }
+            self.gameCompetitions = bufferGameCompetitions
+            guard let reloadData = reloadData else {
+                return }
+            reloadData()
+        } else {
+            router.back(winer: gameCompetitions[0].nameOfViner())
+        }
+    }
+    
+    func setForIndex(_ index: Int) -> StartGameCellViewModelImp {
+        return StartGameCellViewModelImp(competitions: gameCompetitions[index])
+    }
 
 }

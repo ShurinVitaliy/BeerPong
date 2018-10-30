@@ -10,11 +10,9 @@ import UIKit
 
 class TeamFormingViewRouter {
     private let navigationController: UINavigationController
-    var competitions: [Competiton]
     
-    init(navigationController: UINavigationController, competitions: [Competiton]) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.competitions = competitions
     }
     
     func formingPlayersOfTeam(team: Team, reloadData: @escaping () -> Void) {
@@ -55,7 +53,7 @@ class TeamFormingViewRouter {
     
     func startGame(game: Game) {
         let assembly = StartGameViewControllerAssembly()
-        let controller = assembly.createController(navigationController: navigationController, game: game, competitions: competitions)
+        let controller = assembly.createController(navigationController: navigationController, game: game)
         navigationController.pushViewController(controller, animated: true)
         
     }

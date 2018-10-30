@@ -9,8 +9,8 @@
 import UIKit
 
 class TeamFormingViewControllerAssembly {
-    func createController(navigationController: UINavigationController, game: Game, competitions: [Competiton]) -> UIViewController {
-        let router = TeamFormingViewRouter(navigationController: navigationController, competitions: competitions)
+    func createController(navigationController: UINavigationController, game: Game) -> UIViewController {
+        let router = TeamFormingViewRouter(navigationController: navigationController)
         let model = TeamFormingViewModelImp(router: router, game: game)
         let controller = TeamFormingViewController(viewModel: model)
         return controller

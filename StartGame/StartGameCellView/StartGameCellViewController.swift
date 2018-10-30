@@ -8,16 +8,20 @@
 
 import UIKit
 
-class StartGameCellViewController: UIView {
+class StartGameCellViewController: UITableViewCell {
     private var viewModel: StartGameCellViewModel?
     
     private var teamN1: UILabel!
     private var teamN2: UILabel!
     private var winer: UILabel!
     
-    init(viewModel: StartGameCellViewModel) {
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+    }
+    
+    func apply(viewModel: StartGameCellViewModel) {
         self.viewModel = viewModel
-        super.init(frame: CGRect.zero)
         setupView()
     }
     

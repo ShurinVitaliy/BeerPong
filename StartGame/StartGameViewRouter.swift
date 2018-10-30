@@ -27,4 +27,10 @@ class StartGameViewRouter {
         navigationController.present(alert, animated: true, completion: nil)
     }
     
+    func back(winer: String) {
+        let alert = UIAlertController(title: "конец игры", message: winer, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        navigationController.present(alert, animated: true, completion: nil)
+    }
+    
 }
