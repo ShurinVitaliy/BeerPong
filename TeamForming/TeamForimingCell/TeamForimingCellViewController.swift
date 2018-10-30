@@ -25,16 +25,19 @@ enum LabelType {
     }
 }
 
-class TeamForimingCellViewController: UIView {
+class TeamForimingCellViewController: UITableViewCell {
     private var viewModel: TeamForimingCellViewModel?
     private var teamName: UILabel!
     private var teamCaptain: UILabel!
     private var players: UITextView!
     
     
-    init(viewModel: TeamForimingCellViewModel) {
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+    }
+    func apply(viewModel: TeamForimingCellViewModel) {
         self.viewModel = viewModel
-        super.init(frame: CGRect.zero)
         setupView()
     }
     

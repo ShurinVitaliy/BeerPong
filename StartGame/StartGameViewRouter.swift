@@ -16,4 +16,15 @@ class StartGameViewRouter {
         self.navigationController = navigationController
     }
     
+    func whyIsWiner(competition1: Team, competition2: Team, index: Int, createWiner: @escaping (Team, Int) -> Void) {
+        let alert = UIAlertController(title: "Победитель", message: "выберите команду которая одержала победу", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: competition1.name, style: .default, handler: { (action) in
+            createWiner(competition1, index)
+        }))
+        alert.addAction(UIAlertAction(title: competition2.name, style: .default, handler: { (action) in
+            createWiner(competition2, index)
+        }))
+        navigationController.present(alert, animated: true, completion: nil)
+    }
+    
 }

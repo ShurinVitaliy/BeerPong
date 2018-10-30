@@ -23,17 +23,24 @@ class TeamFormingViewController: UIViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        print("viewDidLay")
+        setUpConstraints()
+        setUpConstraintsForTableView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("viewDidLoad")
         viewForTableView = createViewForTableView()
         view.addSubview(viewForTableView)
         startGameButton = createStartGameButton()
         view.addSubview(startGameButton)
-        setUpConstraints()
+       // setUpConstraints()
         tableView = createTableView()
         viewForTableView.addSubview(tableView)
-        setUpConstraintsForTableView()
+       // setUpConstraintsForTableView()
         /*
         view.addSubview(tableView)
         viewForTableView.addSubview(tableView)
@@ -53,10 +60,7 @@ class TeamFormingViewController: UIViewController {
     }
     
     @objc private func startGame(_ sender: UIButton) {
-        let countOfTeams = viewModel?.game.countOfTeams() ?? 0
-        if countOfTeams > 1 {
-            viewModel?.startGame()
-        }
+        viewModel?.startGame()
     }
     
     private func createViewForTableView() -> UIView {
@@ -92,7 +96,7 @@ class TeamFormingViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        tableView.register(TeamForimingCellViewController.self, forCellReuseIdentifier: "TeamForimingCellViewController")
         return tableView
     }
     
@@ -117,14 +121,12 @@ extension TeamFormingViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        let model = TeamForimingCellViewController(viewModel: TeamForimingCellViewModelImp(team: (viewModel?.game.teamForIndex(indexPath.row))!))
-        model.translatesAutoresizingMaskIntoConstraints = false
-        cell.addSubview(model)
-        model.trailingAnchor.constraint(equalTo: cell.trailingAnchor).isActive = true
-        model.leadingAnchor.constraint(equalTo: cell.leadingAnchor).isActive = true
-        model.bottomAnchor.constraint(equalTo: cell.bottomAnchor).isActive = true
-        model.topAnchor.constraint(equalTo: cell.topAnchor).isActive = true
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TeamForimingCellViewController", for: indexPath) as? TeamForimingCellViewController, let model = viewModel?.setForIndex(indexPath.row)
+            else {
+            return UITableViewCell()
+        }
+        
+        cell.apply(viewModel: model)
         return cell
     }
 }

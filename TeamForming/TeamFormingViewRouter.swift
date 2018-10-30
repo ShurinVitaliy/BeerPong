@@ -10,9 +10,11 @@ import UIKit
 
 class TeamFormingViewRouter {
     private let navigationController: UINavigationController
+    var competitions: [Competiton]
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, competitions: [Competiton]) {
         self.navigationController = navigationController
+        self.competitions = competitions
     }
     
     func formingPlayersOfTeam(team: Team, reloadData: @escaping () -> Void) {
@@ -40,9 +42,7 @@ class TeamFormingViewRouter {
             for textField in alert.textFields! {
                 if (textField.text?.isEmpty)! {
                     flag = false
-                    let alerWarning = UIAlertController(title: "не все поля заполнены!", message: "заполните все поля!", preferredStyle: .alert)
-                    alerWarning.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-                    self.navigationController.present(alerWarning, animated: true, completion: nil)
+                    self.errorAlert(title: "не все поля заполнены!", message: "заполните все поля!", titleButton: "Cancel")
                 }
             }
             if flag {
@@ -55,9 +55,15 @@ class TeamFormingViewRouter {
     
     func startGame(game: Game) {
         let assembly = StartGameViewControllerAssembly()
-        let controller = assembly.createController(navigationController: navigationController, game: game)
+        let controller = assembly.createController(navigationController: navigationController, game: game, competitions: competitions)
         navigationController.pushViewController(controller, animated: true)
         
+    }
+    
+    func errorAlert(title: String, message: String, titleButton: String) {
+        let alerWarning = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alerWarning.addAction(UIAlertAction(title: titleButton, style: .cancel))
+        navigationController.present(alerWarning, animated: true, completion: nil)
     }
     
     

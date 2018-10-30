@@ -24,10 +24,9 @@ class StartGameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("tut 9")
         tableView = createTableView()
         view.addSubview(tableView)
-        print(viewModel?.gameCompetitions.count)
+        setupNavigationBar()
     }
     
     private func createTableView() -> UITableView {
@@ -36,6 +35,14 @@ class StartGameViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         return tableView
+    }
+    
+    func setupNavigationBar() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(nextLvL))
+    }
+    
+    @objc private func nextLvL(_ sender: UIBarButtonItem) {
+        print("nex")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -47,12 +54,12 @@ class StartGameViewController: UIViewController {
 extension StartGameViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.gameCompetitions.count ?? 0
+        return viewModel?.competitions.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        let model = StartGameCellViewController(viewModel: StartGameCellViewModelImp(competitions: (viewModel?.gameCompetitions[indexPath.row])!) )
+        let model = StartGameCellViewController(viewModel: StartGameCellViewModelImp(competitions: (viewModel?.competitions[indexPath.row])!) )
         cell.addSubview(model)
         model.translatesAutoresizingMaskIntoConstraints = false
         model.trailingAnchor.constraint(equalTo: cell.trailingAnchor).isActive = true
@@ -66,6 +73,8 @@ extension StartGameViewController: UITableViewDataSource {
 extension StartGameViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        viewModel?.didSelectRowAt(index: indexPath.row, { [weak self] in
+            self?.tableView.reloadData()
+        })
     }
 }

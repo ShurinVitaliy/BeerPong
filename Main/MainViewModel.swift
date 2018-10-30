@@ -10,19 +10,21 @@ import UIKit
 
 protocol MainViewModel {
     func teamForming()
-    var game: Game {get}
+    var game: Game { get }
+    var competitions: [Competiton] { get }
 }
 
 class MainViewModelImp: MainViewModel {
 
     private let router: MainViewRouter
     let game = Game(teams: [Team]())
+    let competitions = [Competiton]()
     
     init(router: MainViewRouter) {
         self.router = router
     }
     
     func teamForming() {
-        router.openTeamForming(game: game)
+        router.openTeamForming(game: game, competitions: competitions)
     }
 }

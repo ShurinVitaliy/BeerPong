@@ -23,6 +23,11 @@ class Competiton {
     }
     
     func nameOfViner() -> String {
-        return viner?.name ?? "кто победитель?"
+        return "победитель: \(viner?.name ?? " ")"
+    }
+    
+    func vinewIsNil() -> Bool {
+        
+        return false
     }
 }

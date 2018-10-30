@@ -14,7 +14,7 @@ protocol TeamFormingViewModel {
     func didSelectRowAt(index: Int)
     func startGame()
     var game: Game { get }
-    
+    func setForIndex(_ index: Int) -> TeamForimingCellViewModelImp
 }
 
 class TeamFormingViewModelImp: TeamFormingViewModel {
@@ -48,13 +48,21 @@ class TeamFormingViewModelImp: TeamFormingViewModel {
         if let reloadData = reloadData {
             router.formingPlayersOfTeam(team: game.teamForIndex(index), reloadData: reloadData)
         } else {
-            return
+            print("reloadData")
         }
         
     }
     
     func startGame() {
-        router.startGame(game: game)
+        if  game.countOfTeams() > 1 {
+            router.startGame(game: game)
+        } else {
+            router.errorAlert(title: "недостаточное колличество команд", message: "создайте больше команд", titleButton: "OK")
+        }
+    }
+    
+    func setForIndex(_ index: Int) -> TeamForimingCellViewModelImp {
+        return TeamForimingCellViewModelImp(team: game.teamForIndex(index))
     }
     
 }
