@@ -39,7 +39,7 @@ class StartGameViewController: UIViewController {
     
     func setupNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(nextLvL))
-        navigationItem.leftBarButtonItem = UIBarButtonItem()
+        //navigationItem.leftBarButtonItem = UIBarButtonItem()
     }
     
     @objc private func nextLvL(_ sender: UIBarButtonItem) {

@@ -35,10 +35,18 @@ class StartGameViewModelImp: StartGameViewModel {
     
     func createPlace() {
         var i: Int = 0
-        while self.gameCompetitions.count != (self.game.countOfTeams()/2 + self.game.countOfTeams() % 2) {
-            addCompetition(competition: Competiton(competiter1: game.teamForIndex(i), competiter2:  game.teamForIndex(i + 1)))
-            i = i + 2
+        if (game.countOfTeams() % 2) == 1 {
+            while self.gameCompetitions.count != (self.game.countOfTeams()/2 + self.game.countOfTeams() % 2) {
+                addCompetition(competition: Competiton(competiter1: game.teamForIndex(i), competiter2:  game.teamForIndex(i + 1)))
+                i = i + 1
+            }
+        } else {
+            while self.gameCompetitions.count != (self.game.countOfTeams()/2 + self.game.countOfTeams() % 2) {
+                addCompetition(competition: Competiton(competiter1: game.teamForIndex(i), competiter2:  game.teamForIndex(i + 1)))
+                i = i + 2
+            }
         }
+        
     }
     
     func didSelectRowAt(index: Int, _ reloadData: @escaping () -> Void) {
