@@ -12,7 +12,7 @@ class HistoryViewControllerAssembly {
     func createController(navigationController: UINavigationController) -> UIViewController {
         let router = HistoryViewRouter(navigationController: navigationController)
         let model = HistoryViewModelImp(router: router)
-        let controller = HistoryViewController()
+        let controller = HistoryViewController(viewModel: model)
         return controller
     }
 }
