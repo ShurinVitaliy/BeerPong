@@ -63,7 +63,4 @@ class TeamFormingViewRouter {
         alerWarning.addAction(UIAlertAction(title: titleButton, style: .cancel))
         navigationController.present(alerWarning, animated: true, completion: nil)
     }
-    
-    
-
 }

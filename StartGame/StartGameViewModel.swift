@@ -46,7 +46,6 @@ class StartGameViewModelImp: StartGameViewModel {
                 i = i + 2
             }
         }
-        
     }
     
     func didSelectRowAt(index: Int, _ reloadData: @escaping () -> Void) {
@@ -81,5 +80,4 @@ class StartGameViewModelImp: StartGameViewModel {
     func setForIndex(_ index: Int) -> StartGameCellViewModelImp {
         return StartGameCellViewModelImp(competitions: gameCompetitions[index])
     }
-
 }

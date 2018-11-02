@@ -31,7 +31,6 @@ class TeamForimingCellViewController: UITableViewCell {
     private var teamCaptain: UILabel!
     private var players: UITextView!
     
-    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
@@ -62,9 +61,7 @@ class TeamForimingCellViewController: UITableViewCell {
         else {
             playersInString = "none"
         }
-
         return playersInString
-        
     }
     
     private func setupLabel(labelType: LabelType, text: String) -> UILabel {
@@ -101,8 +98,7 @@ class TeamForimingCellViewController: UITableViewCell {
         players.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8).isActive = true
         players.topAnchor.constraint(equalTo: teamCaptain.bottomAnchor, constant: 8).isActive = true
         players.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
-        players.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 1/2).isActive = true
-        
+        players.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 1/2).isActive = true 
     }
     
     required init?(coder aDecoder: NSCoder) {

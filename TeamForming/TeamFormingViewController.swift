@@ -37,14 +37,8 @@ class TeamFormingViewController: UIViewController {
         view.addSubview(viewForTableView)
         startGameButton = createStartGameButton()
         view.addSubview(startGameButton)
-       // setUpConstraints()
         tableView = createTableView()
         viewForTableView.addSubview(tableView)
-       // setUpConstraintsForTableView()
-        /*
-        view.addSubview(tableView)
-        viewForTableView.addSubview(tableView)
-        setUpConstraintsForTableView()*/
         setupNavigationBar()
     }
     

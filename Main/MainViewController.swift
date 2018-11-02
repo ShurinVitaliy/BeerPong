@@ -54,7 +54,7 @@ class MainViewController: UIViewController {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.translatesAutoresizingMaskIntoConstraints = false
         switch buttonType {
-        case .startGameButton: button.addTarget(self, action: #selector(startGame), for: UIControlEvents.touchUpInside)
+        case .startGameButton: button.addTarget(self, action: #selector(showHistory), for: UIControlEvents.touchUpInside)
             button.backgroundColor = .darkGray
             button.setTitleColor(.white, for: .normal)
         case .teamFormingButton: button.addTarget(self, action: #selector(teamForming), for: UIControlEvents.touchUpInside)
@@ -64,7 +64,7 @@ class MainViewController: UIViewController {
         return button
     }
     
-    @objc private func startGame(_ sender: UIButton) {
+    @objc private func showHistory(_ sender: UIButton) {
         
     }
     

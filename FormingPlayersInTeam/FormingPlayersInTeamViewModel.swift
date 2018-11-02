@@ -32,7 +32,6 @@ class FormingPlayersInTeamViewModelImp: FormingPlayersInTeamViewModel {
     func addNewPlayer(_ reloadData: @escaping () -> Void) {
         self.reloadData = reloadData
         router.addPeople(title: alertTitle, placeholder: placeholder, addNewPeople: addNewPeople)
-        
     }
     
     func addNewPeople(name: String) {

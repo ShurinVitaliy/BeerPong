@@ -49,7 +49,6 @@ class TeamFormingViewModelImp: TeamFormingViewModel {
         } else {
             print("reloadData")
         }
-        
     }
     
     func startGame() {
@@ -62,6 +61,5 @@ class TeamFormingViewModelImp: TeamFormingViewModel {
     
     func setForIndex(_ index: Int) -> TeamForimingCellViewModelImp {
         return TeamForimingCellViewModelImp(team: game.teamForIndex(index))
-    }
-    
+    }    
 }

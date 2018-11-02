@@ -32,5 +32,4 @@ class StartGameViewRouter {
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         navigationController.present(alert, animated: true, completion: nil)
     }
-    
 }

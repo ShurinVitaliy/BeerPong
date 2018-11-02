@@ -47,6 +47,4 @@ class Team {
     func countOfPlayers() -> Int {
         return players.count
     }
-    
-    
 }
