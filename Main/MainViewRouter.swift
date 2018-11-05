@@ -20,4 +20,10 @@ class MainViewRouter {
         let controller = assembly.createController(navigationController: navigationController, game: game)
         navigationController.pushViewController(controller, animated: true)
     }
+    
+    func openHistory() {
+        let assembly = HistoryViewControllerAssembly()
+        let controller = assembly.createController(navigationController: navigationController)
+        navigationController.pushViewController(controller, animated: true)
+    }
 }

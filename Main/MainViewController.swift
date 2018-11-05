@@ -65,7 +65,7 @@ class MainViewController: UIViewController {
     }
     
     @objc private func showHistory(_ sender: UIButton) {
-        
+        viewModel?.showHistory()
     }
     
     @objc private func teamForming(_ sender: UIButton) {

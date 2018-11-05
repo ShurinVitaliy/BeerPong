@@ -9,9 +9,13 @@
 import Foundation
 
 protocol CardViewModel {
-    
+    var nameOfTeam: String { get }
 }
 
 class CardViewModelImp: CardViewModel {
+    let nameOfTeam: String
     
+    init(nameOfTeam: String) {
+        self.nameOfTeam = nameOfTeam
+    }
 }

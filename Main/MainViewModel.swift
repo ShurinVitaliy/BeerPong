@@ -10,6 +10,7 @@ import UIKit
 
 protocol MainViewModel {
     func teamForming()
+    func showHistory()
     var game: Game { get }
 }
 
@@ -24,5 +25,9 @@ class MainViewModelImp: MainViewModel {
     
     func teamForming() {
         router.openTeamForming(game: game)
+    }
+    
+    func showHistory() {
+        router.openHistory()
     }
 }

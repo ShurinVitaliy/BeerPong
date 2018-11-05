@@ -21,16 +21,25 @@ class CardViewController: UIView {
     
     
     private func setupView() {
-        
+        labelNameOfTeam = setupLabel(text: (viewModel?.nameOfTeam)!)
+        addSubview(labelNameOfTeam)
+        setupConstraints()
     }
     
     private func setupLabel(text: String) -> UILabel {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 32)
+        label.font = UIFont.boldSystemFont(ofSize: 16)
         label.text = text
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }
+    
+    private func setupConstraints() {
+        labelNameOfTeam.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        labelNameOfTeam.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        labelNameOfTeam.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        labelNameOfTeam.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
