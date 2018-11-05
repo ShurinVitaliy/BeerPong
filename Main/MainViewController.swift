@@ -15,7 +15,7 @@ enum ButtonType {
     func title() -> String {
         switch self {
         case .startGameButton:
-            return "История игор"
+            return "История побед"
         case .teamFormingButton:
             return "Преступить к игре"
         }

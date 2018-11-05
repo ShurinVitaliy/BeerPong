@@ -32,6 +32,9 @@
 		8467EB29218CC98A00EDE7AD /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467EB28218CC98A00EDE7AD /* HistoryViewModel.swift */; };
 		8467EB2B218CC99B00EDE7AD /* HistoryViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467EB2A218CC99B00EDE7AD /* HistoryViewRouter.swift */; };
 		8467EB2D218CC9A900EDE7AD /* HistoryViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467EB2C218CC9A900EDE7AD /* HistoryViewControllerAssembly.swift */; };
+		8497FDFE2190889E00E9D13D /* HistoryGameDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8497FDFC2190889E00E9D13D /* HistoryGameDataModel.xcdatamodeld */; };
+		8497FE002190919300E9D13D /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8497FDFF2190919300E9D13D /* CardViewController.swift */; };
+		8497FE03219091BC00E9D13D /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8497FE02219091BC00E9D13D /* CardViewModel.swift */; };
 		84E9D161218738EF00C924B4 /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D160218738EF00C924B4 /* StartGameViewController.swift */; };
 		84E9D1632187390500C924B4 /* StartGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D1622187390500C924B4 /* StartGameViewModel.swift */; };
 		84E9D1652187392200C924B4 /* StartGameViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D1642187392200C924B4 /* StartGameViewRouter.swift */; };
@@ -69,6 +72,9 @@
 		8467EB28218CC98A00EDE7AD /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		8467EB2A218CC99B00EDE7AD /* HistoryViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewRouter.swift; sourceTree = "<group>"; };
 		8467EB2C218CC9A900EDE7AD /* HistoryViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewControllerAssembly.swift; sourceTree = "<group>"; };
+		8497FDFD2190889E00E9D13D /* HistoryGameDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HistoryGameDataModel.xcdatamodel; sourceTree = "<group>"; };
+		8497FDFF2190919300E9D13D /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		8497FE02219091BC00E9D13D /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		84E9D160218738EF00C924B4 /* StartGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
 		84E9D1622187390500C924B4 /* StartGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameViewModel.swift; sourceTree = "<group>"; };
 		84E9D1642187392200C924B4 /* StartGameViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameViewRouter.swift; sourceTree = "<group>"; };
@@ -119,6 +125,7 @@
 				840DE0A1218053D900D1A308 /* Assets.xcassets */,
 				840DE0A3218053D900D1A308 /* LaunchScreen.storyboard */,
 				840DE0A6218053D900D1A308 /* Info.plist */,
+				8497FDFC2190889E00E9D13D /* HistoryGameDataModel.xcdatamodeld */,
 			);
 			path = BeerPong;
 			sourceTree = "<group>";
@@ -177,9 +184,19 @@
 			path = TeamForimingCell;
 			sourceTree = "<group>";
 		};
+		8497FE012190919A00E9D13D /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				8497FDFF2190919300E9D13D /* CardViewController.swift */,
+				8497FE02219091BC00E9D13D /* CardViewModel.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
 		84AE178721892D6B002D23F0 /* History */ = {
 			isa = PBXGroup;
 			children = (
+				8497FE012190919A00E9D13D /* Card */,
 				8467EB26218CC97800EDE7AD /* HistoryViewController.swift */,
 				8467EB28218CC98A00EDE7AD /* HistoryViewModel.swift */,
 				8467EB2A218CC99B00EDE7AD /* HistoryViewRouter.swift */,
@@ -281,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8497FE002190919300E9D13D /* CardViewController.swift in Sources */,
 				84E9D161218738EF00C924B4 /* StartGameViewController.swift in Sources */,
 				84653BC12181C6A0004EA882 /* TeamFormingViewController.swift in Sources */,
 				84653BCA2181D2AA004EA882 /* Game.swift in Sources */,
@@ -300,6 +318,7 @@
 				845E5CF5218467DF0078CE33 /* FormingPlayersInTeamViewControllerAssembly.swift in Sources */,
 				845E5CF1218467A60078CE33 /* FormingPlayersInTeamViewModel.swift in Sources */,
 				84E9D16E21875AE300C924B4 /* Competition.swift in Sources */,
+				8497FE03219091BC00E9D13D /* CardViewModel.swift in Sources */,
 				8467EB27218CC97800EDE7AD /* HistoryViewController.swift in Sources */,
 				845E5CF3218467BB0078CE33 /* FormingPlayersInTeamViewRouter.swift in Sources */,
 				8467EB29218CC98A00EDE7AD /* HistoryViewModel.swift in Sources */,
@@ -307,6 +326,7 @@
 				84E9D1652187392200C924B4 /* StartGameViewRouter.swift in Sources */,
 				840DE09B218053D800D1A308 /* AppDelegate.swift in Sources */,
 				840DE0B421808A9200D1A308 /* MainViewControllerAssembly.swift in Sources */,
+				8497FDFE2190889E00E9D13D /* HistoryGameDataModel.xcdatamodeld in Sources */,
 				840DE0AE21808A3900D1A308 /* MainViewController.swift in Sources */,
 				84E9D16A21873D5200C924B4 /* StartGameCellViewController.swift in Sources */,
 				840DE0B021808A7900D1A308 /* MainViewModel.swift in Sources */,
@@ -484,6 +504,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8497FDFC2190889E00E9D13D /* HistoryGameDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8497FDFD2190889E00E9D13D /* HistoryGameDataModel.xcdatamodel */,
+			);
+			currentVersion = 8497FDFD2190889E00E9D13D /* HistoryGameDataModel.xcdatamodel */;
+			path = HistoryGameDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 840DE08F218053D600D1A308 /* Project object */;
 }
